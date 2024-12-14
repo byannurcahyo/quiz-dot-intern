@@ -101,24 +101,24 @@ const Quiz: React.FC = () => {
     const currentAnswers = answers[currentQuestionIndex];
 
     return (
-        <div className="px-4 py-8 sm:px-6 md:px-12 lg:px-24">
-            <div className="p-4 bg-gray-50 shadow-md rounded-lg border border-gray-300 flex flex-col justify-center items-start gap-4 max-w-screen-sm mx-auto">
-                <div className="h-16 pb-4 flex flex-col justify-center items-start gap-1">
-                    <div className="text-gray-900 text-xl sm:text-2xl font-bold break-words">
-                        {decodeURIComponent(currentQuestion.question)}{" "}
+        <div className="px-4 py-8 sm:px-6 md:px-12 lg:px-24 max-w-screen-lg mx-auto">
+            <div className="p-6 bg-zinc-50 shadow-md rounded-lg border border-zinc-300 flex flex-col justify-start items-start gap-2">
+                <div className="min-h-[120px] flex flex-col justify-center items-start gap-2 w-full">
+                    <div className="text-zinc-900 text-xl sm:text-2xl font-bold break-words w-full overflow-wrap break-word">
+                        {decodeURIComponent(currentQuestion.question)}
                     </div>
-                    <div className="text-gray-400 text-sm font-normal break-words">
+                    <div className="text-zinc-400 text-sm font-normal w-full">
                         Select only one answer below!
                     </div>
                 </div>
                 {currentAnswers.map((answer, index) => (
                     <div
                         key={index}
-                        className="self-stretch p-2 rounded-lg overflow-hidden flex justify-center items-center gap-2 border-2 border-gray-200 cursor-pointer hover:bg-gray-200 transition duration-200"
+                        className="self-stretch p-3 rounded-lg flex justify-center items-center gap-2 border-2 border-zinc-200 cursor-pointer hover:bg-zinc-200 transition duration-200 break-words w-full max-w-full"
                         onClick={() => handleAnswerClick(index)}
                     >
-                        <div className="text-center text-gray-900 text-base sm:text-lg font-semibold break-words">
-                            {decodeURIComponent(answer.text)}{" "}
+                        <div className="text-center text-zinc-900 text-base sm:text-lg font-semibold break-words w-full overflow-wrap break-word">
+                            {decodeURIComponent(answer.text)}
                         </div>
                     </div>
                 ))}
