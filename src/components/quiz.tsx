@@ -101,10 +101,10 @@ const Quiz: React.FC = () => {
     const currentAnswers = answers[currentQuestionIndex];
 
     return (
-        <div>
-            <div className="p-6 bg-gray-50 shadow-md rounded-lg border border-gray-300 flex flex-col justify-center items-start gap-4 mx-48 py-8">
+        <div className="px-4 py-8 sm:px-6 md:px-12 lg:px-24">
+            <div className="p-4 bg-gray-50 shadow-md rounded-lg border border-gray-300 flex flex-col justify-center items-start gap-4 max-w-screen-sm mx-auto">
                 <div className="h-16 pb-4 flex flex-col justify-center items-start gap-1">
-                    <div className="text-gray-900 text-2xl font-bold break-words">
+                    <div className="text-gray-900 text-xl sm:text-2xl font-bold break-words">
                         {decodeURIComponent(currentQuestion.question)}{" "}
                     </div>
                     <div className="text-gray-400 text-sm font-normal break-words">
@@ -117,7 +117,7 @@ const Quiz: React.FC = () => {
                         className="self-stretch p-2 rounded-lg overflow-hidden flex justify-center items-center gap-2 border-2 border-gray-200 cursor-pointer hover:bg-gray-200 transition duration-200"
                         onClick={() => handleAnswerClick(index)}
                     >
-                        <div className="text-center text-gray-900 text-lg font-semibold break-words">
+                        <div className="text-center text-gray-900 text-base sm:text-lg font-semibold break-words">
                             {decodeURIComponent(answer.text)}{" "}
                         </div>
                     </div>

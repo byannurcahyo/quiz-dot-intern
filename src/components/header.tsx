@@ -53,22 +53,18 @@ const Header = () => {
     };
 
     return (
-        <header>
-            <div className="w-full h-full pt-28 pb-6 px-48 flex justify-between items-center bg-zinc-50">
-                <div className="flex justify-start items-start gap-2.5">
-                    <div className="text-center">
-                        <span className="text-zinc-950 text-xl font-bold break-words">
-                            Time Left :{" "}
-                        </span>
-                        <span className="text-red-700 text-xl font-bold break-words">
-                            {formatTime(timeLeft)}
-                        </span>
-                    </div>
+        <header className="px-4 sm:px-8 md:px-16 lg:px-24 bg-zinc-50">
+            <div className="w-full pt-6 pb-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div className="text-center sm:text-left">
+                    <span className="text-zinc-950 text-lg sm:text-xl font-bold">
+                        Time Left :{" "}
+                    </span>
+                    <span className="text-red-700 text-lg sm:text-xl font-bold">
+                        {formatTime(timeLeft)}
+                    </span>
                 </div>
-                <div className="flex justify-start items-start gap-2.5">
-                    <div className="text-center text-zinc-950 text-xl font-bold break-words">
-                        Good Luck
-                    </div>
+                <div className="text-center sm:text-right text-zinc-950 text-lg sm:text-xl font-bold">
+                    Good Luck
                 </div>
             </div>
         </header>
@@ -78,17 +74,15 @@ const Header = () => {
 const HeaderButton = () => {
     return (
         <header>
-            <div className="w-full h-full pt-28 pb-6 px-48 flex justify-between items-center bg-zinc-50">
-                <div className="flex justify-start items-start gap-2.5">
-                    <div className="text-center">
-                        <span className="text-zinc-950 text-2xl font-bold break-words">
-                            Quiz Result :
-                        </span>
-                    </div>
+            <div className="w-full pt-16 pb-6 px-4 sm:px-8 md:px-16 lg:px-48 flex flex-col sm:flex-row justify-between items-center bg-zinc-50">
+                <div className="mb-4 sm:mb-0">
+                    <span className="text-zinc-950 text-xl sm:text-2xl font-bold break-words text-center sm:text-left">
+                        Quiz Result :
+                    </span>
                 </div>
-                <div className="flex justify-start items-start gap-2.5">
+                <div>
                     <Link to="/">
-                        <button className="bg-zinc-950 text-white text-base md:text-sm font-semibold px-8 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform">
+                        <button className="bg-zinc-950 text-white text-sm sm:text-base font-semibold px-6 sm:px-8 py-2 sm:py-3 rounded-lg shadow-lg hover:scale-105 transition-transform">
                             Log out
                         </button>
                     </Link>

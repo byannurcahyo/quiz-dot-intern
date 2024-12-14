@@ -5,7 +5,16 @@ const Landingpage = () => {
     return (
         <div className="min-h-screen flex flex-col bg-zinc-50">
             <div className="flex-1 w-full bg-zinc-50 flex flex-col lg:flex-row justify-center items-center gap-8 px-6 lg:px-16 xl:px-24">
-                <div className="flex flex-col gap-6 flex-1 text-center lg:text-left">
+                <div className="order-1 lg:order-2 flex-1 max-w-full">
+                    <div className="w-full aspect-w-1 aspect-h-1 lg:aspect-w-4 lg:aspect-h-3">
+                        <img
+                            src="./ilu1.svg"
+                            alt="Illustration"
+                            className="w-full h-full object-contain bg-transparent"
+                        />
+                    </div>
+                </div>
+                <div className="order-2 lg:order-1 flex flex-col gap-6 flex-1 text-center lg:text-left">
                     <div>
                         <h1 className="text-zinc-950 text-3xl md:text-4xl lg:text-5xl font-extrabold">
                             Welcome to Yanswer
@@ -26,15 +35,6 @@ const Landingpage = () => {
                                 Get Started
                             </button>
                         </Link>
-                    </div>
-                </div>
-                <div className="flex-1 max-w-full">
-                    <div className="w-full aspect-w-1 aspect-h-1 lg:aspect-w-4 lg:aspect-h-3">
-                        <img
-                            src="./ilu1.svg"
-                            alt="Illustration"
-                            className="w-full h-full object-contain bg-transparent"
-                        />
                     </div>
                 </div>
             </div>
