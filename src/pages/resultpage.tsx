@@ -36,27 +36,27 @@ const Resultpage: React.FC = () => {
         <div className="min-h-screen flex flex-col bg-zinc-50">
             <HeaderButton />
             <div className="flex-1 w-full bg-zinc-50 flex-col justify-start gap-8 inline-flex">
-                <div className="flex-1 w-full bg-zinc-50 flex flex-col justify-start items-center gap-8 px-4 sm:px-8 md:px-16 lg:px-24">
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <div className="h-[80px] w-full bg-blue-300/50 rounded-lg shadow flex items-center gap-4 p-4">
+                <div className="flex-1 w-full bg-zinc-50 flex flex-col items-center px-4 sm:px-8 md:px-16 lg:px-24">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-[900px]">
+                        <div className="h-[80px] bg-blue-300/50 rounded-lg shadow flex items-center gap-4 p-4">
                             <img
                                 src="./file-question.svg"
-                                alt="Image"
+                                alt=""
                                 className="w-12 h-12"
                             />
                             <div>
                                 <div className="text-base font-semibold">
-                                    Total Answer
+                                    Total Questions
                                 </div>
                                 <div className="text-2xl font-bold">
                                     {questions.length}
                                 </div>
                             </div>
                         </div>
-                        <div className="h-[80px] w-full bg-green-300/50 rounded-lg shadow flex items-center gap-4 p-4">
+                        <div className="h-[80px] bg-green-300/50 rounded-lg shadow flex items-center gap-4 p-4">
                             <img
                                 src="./file-check.svg"
-                                alt="Image"
+                                alt=""
                                 className="w-12 h-12"
                             />
                             <div>
@@ -68,10 +68,10 @@ const Resultpage: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="h-[80px] w-full bg-red-300/50 rounded-lg shadow flex items-center gap-4 p-4">
+                        <div className="h-[80px] bg-red-300/50 rounded-lg shadow flex items-center gap-4 p-4">
                             <img
                                 src="./file-x.svg"
-                                alt="Image"
+                                alt=""
                                 className="w-12 h-12"
                             />
                             <div>
@@ -85,6 +85,7 @@ const Resultpage: React.FC = () => {
                         </div>
                     </div>
                 </div>
+
                 {questions.map((q, index) => (
                     <div
                         key={index}

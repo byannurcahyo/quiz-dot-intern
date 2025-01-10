@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const TimerContext = createContext<{
     timeLeft: number;
     setTimeLeft: React.Dispatch<React.SetStateAction<number>>;
+    setIsReady: React.Dispatch<React.SetStateAction<boolean>>;
 } | null>(null);
 
 export const TimerProvider: React.FC<{
@@ -11,8 +12,11 @@ export const TimerProvider: React.FC<{
     children: React.ReactNode;
 }> = ({ initialTime, children }) => {
     const [timeLeft, setTimeLeft] = useState(initialTime);
+    const [isReady, setIsReady] = useState(false);
 
     useEffect(() => {
+        if (!isReady) return;
+
         const timer = setInterval(() => {
             setTimeLeft((prev) => {
                 if (prev <= 0) {
@@ -24,12 +28,15 @@ export const TimerProvider: React.FC<{
         }, 1000);
 
         return () => clearInterval(timer);
-    }, []);
+    }, [isReady]);
+
+    const value = React.useMemo(
+        () => ({ timeLeft, setTimeLeft, setIsReady }),
+        [timeLeft, setTimeLeft, isReady]
+    );
 
     return (
-        <TimerContext.Provider value={{ timeLeft, setTimeLeft }}>
-            {children}
-        </TimerContext.Provider>
+        <TimerContext.Provider value={value}>{children}</TimerContext.Provider>
     );
 };
 
